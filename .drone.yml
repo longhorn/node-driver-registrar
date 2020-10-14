@@ -19,6 +19,7 @@ steps:
   - wget https://github.com/golang/dep/releases/download/v0.5.1/dep-linux-amd64 -O bin/dep
   - chmod u+x bin/dep
   - export PATH=$PWD/bin:$PATH
+  - go mod init
   - make
 
 - name: publish-amd64-image
@@ -62,7 +63,8 @@ steps:
   - wget https://github.com/golang/dep/releases/download/v0.5.1/dep-linux-arm64 -O bin/dep
   - chmod u+x bin/dep
   - export PATH=$PWD/bin:$PATH
-  - make
+  - go mod init
+  - GOARCH=arm64 make
 
 - name: publish-arm64-image
   image: plugins/docker
