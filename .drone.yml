@@ -40,6 +40,7 @@ steps:
     - lh-10132020
     event:
     - push
+    - tag
 ---
 kind: pipeline
 name: default-arm64
@@ -84,6 +85,7 @@ steps:
     - lh-10132020
     event:
     - push
+    - tag
 ---
 kind: pipeline
 name: manifest
@@ -112,6 +114,7 @@ steps:
     - lh-10132020
     event:
     - push
+    - tag
 
 depends_on:
 - default-amd64
